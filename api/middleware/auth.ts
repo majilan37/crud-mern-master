@@ -5,7 +5,7 @@ import { User } from "../types";
 
 type Decoded = { id: string } | string | JwtPayload;
 
-async function protectedRouter(
+export default async function protectedRouter(
   req: Request & {
     user: User | null;
   },

@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 import cors from "cors";
 import todosRoutes from "./routes/todos";
 import dotenv from "dotenv";
+dotenv.config();
 
 // app config
 const app: Application = express();
 const PORT = process.env.PORT;
-dotenv.config();
 
-// Middleware
+// middleware
 app.use(express.json());
 app.use(cors());
 
@@ -26,4 +26,4 @@ mongoose.connect(process.env.MONGO_URI as string, () =>
 );
 
 // listener
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT as string, () => console.log(`Server started on port ${PORT}`));

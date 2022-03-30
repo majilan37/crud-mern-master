@@ -1,14 +1,16 @@
 import mongoose from "mongoose";
+import { Todo } from "../types";
 
-interface Todo {
-  text: string;
-}
-
-const todoSchema = new mongoose.Schema<Todo>({
-  text: {
-    type: String,
-    required: true,
+const todoSchema = new mongoose.Schema<Todo>(
+  {
+    text: {
+      type: String,
+      required: true,
+    },
   },
-});
+  {
+    timestamps: true,
+  }
+);
 
 export default mongoose.model<Todo>("Todo", todoSchema);

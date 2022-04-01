@@ -5,7 +5,7 @@ import { User } from "../types";
 
 type Decoded = { id: string } | string | JwtPayload;
 
-export default async function protectedRouter(
+export default async function protectedRoute(
   req: Request & {
     user: User | null;
   },
@@ -32,6 +32,7 @@ export default async function protectedRouter(
     } catch (err) {
       console.log(err);
       res.status(400).send("Invalid token");
+      throw new Error("Invalid token");
     }
   }
 

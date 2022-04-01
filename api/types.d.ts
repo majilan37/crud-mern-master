@@ -1,12 +1,15 @@
+import mongoose from "mongoose";
 export interface Todo {
   text: string;
+  user: mongoose.Schema.Types.ObjectId;
 }
 
-export interface User {
+export interface User extends mongoose.Document {
   id: string;
   username: string;
   email: string;
   password: string;
+  _doc?: User;
 }
 
 export interface Session {

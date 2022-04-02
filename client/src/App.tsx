@@ -12,7 +12,7 @@ function App() {
     <div className="">
       <Header />
       <Routes>
-        {/* private routes */}
+        {/* private routes  */}
         <Route element={<PrivateRoute />}>
           <Route path="/" element={<Dashborad />} />
           <Route path="/todos/:id" element={<UpdateTodo />} />

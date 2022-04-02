@@ -5,6 +5,7 @@ frontend => client;
 
 backend => api;
 
+this project is just a inhanced version of the previos one 'mern-crud-tuto'
 
 
 Thecs i used in this project:
